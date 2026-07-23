@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 
 async function checkAdmin() {
   const session = await auth();
-  if (!session || session.user.role !== "ADMIN") throw new Error("Unauthorized");
+  if (!session?.user || session.user.role !== "ADMIN") {
 }
 
 export async function deleteProduct(productId: string) {
